@@ -22,7 +22,9 @@ app.use('/', PanelRoute)
 
 app.get('/', (req, res) => res.send('Working!!!'));
 
-
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+  })
 
 if(process.env.ENVIRONMENT  === "lambda"){
     module.exports.handler = serverless(app)
